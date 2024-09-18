@@ -7,7 +7,11 @@ import { createPost } from "@/actions/actions";
 import { getPosts } from "@/actions/actions";
 
 export default async function Blog() {
-  const posts = await prisma.post.findMany();
+  const posts = await prisma.post.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 
     return (
         <div className="custom-layout">
@@ -17,7 +21,7 @@ export default async function Blog() {
 
         <AddPostForm createPost={createPost}/>
 
-        <h2>All posts</h2>
+        <h2>All posts ({posts.length})</h2>
         <BlogList posts={posts} />
 
 

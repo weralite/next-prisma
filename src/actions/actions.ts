@@ -7,13 +7,12 @@ export async function createPost(formData: FormData) {
   const post = await prisma.post.create({
     data: {
       title: formData.get("title") as string,
-      slug: (formData.get("title") as string).toLowerCase().replace(/\s/g, "-"),
+      slug: (formData.get("title") as string).toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-"),
       content: formData.get("content") as string,
     },
   });
 
   revalidatePath("/blog"); // Revalidate the path where the posts are listed
-
   return post;
 }
 

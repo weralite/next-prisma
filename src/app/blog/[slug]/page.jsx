@@ -9,8 +9,11 @@ export default async function BlogPost({ params }) {
 
     return (
         <div className="custom-layout">
+            <div className='max-w-[500px]'>
             <h1>{post.title}</h1>
             <p>{post.content}</p>
+            </div>
+
         </div>
     );
 }

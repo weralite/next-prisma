@@ -13,7 +13,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav>
+    <nav className="flex items-center">
       <ul className="flex flex-row gap-5">
         {siteRoutes.map((siteRoute) => (
           <li

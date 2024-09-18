@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../components/layout/Header";
 import Container from "../components/layout/Container";
+import Breadcrumbs from "../components/layout/Breadcrumbs";
 
 
 const geistSans = localFont({
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className="flex-container justify-center bg-gray-200">
         <Container>
       <Header />
+      <Breadcrumbs />
         {children}
         </Container>
       </body>

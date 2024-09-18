@@ -18,7 +18,7 @@ export default function Navbar() {
         {siteRoutes.map((siteRoute) => (
           <li
             key={siteRoute.path}
-            className={`relative ${pathName === siteRoute.path ? "after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-current after:left-0 after:bottom-0 after:transition-all after:duration-150" : "after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-current after:left-1/2 after:bottom-0 after:transition-all after:duration-150 hover:after:w-full hover:after:left-0"}`}
+            className={`relative text-2xl ${pathName === siteRoute.path ? "after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-current after:left-0 after:bottom-0 after:transition-all after:duration-150" : "after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-current after:left-1/2 after:bottom-0 after:transition-all after:duration-150 hover:after:w-full hover:after:left-0"}`}
           >
             <Link href={siteRoute.path}>{siteRoute.name}</Link>
           </li>

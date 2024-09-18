@@ -7,17 +7,16 @@ export default async function BlogPost({ params }) {
             slug: params.slug,
         },
     });
-
+console.log(post)
     return (
         <div>
             <Breadcrumbs />
-        <div className="custom-layout">
-            <div className='max-w-[500px]'>
-            <h1>{post.title}</h1>
-            <p>{post.content}</p>
+            <div className="flex flex-col items-center">
+                <div className="flex flex-col gap-4 text-center max-w-[500px]">
+                    <h1>{post.title}</h1>
+                    <p>{post.content}</p>
+                </div>
             </div>
-
-        </div>
         </div>
     );
 }

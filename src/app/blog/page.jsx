@@ -21,7 +21,7 @@ export default async function Blog() {
 
         <AddPostForm createPost={createPost}/>
 
-        <h2>All posts ({posts.length})</h2>
+        <h2 className="border-b-2">All posts ({posts.length})</h2>
         <BlogList posts={posts} />
 
 

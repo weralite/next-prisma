@@ -8,7 +8,7 @@ export default async function BlogList() {
         <ul className="flex flex-col items-center gap-5">
             {posts.map((post) => (
                 <li key={post.id} className="flex flex-col gap-2 p-5">
-                    <Link href={`/blog/${post.id}`}>
+                    <Link href={`/blog/${post.slug}`}>
                         {post.title}
                     </Link>
                 </li>

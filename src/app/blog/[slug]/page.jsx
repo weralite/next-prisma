@@ -1,6 +1,6 @@
 import prisma from '@/lib/db';
 
-export default async function PostPage({ params }) {
+export default async function BlogPost({ params }) {
     const post = await prisma.post.findUnique({
         where: {
             slug: params.slug,
@@ -8,7 +8,7 @@ export default async function PostPage({ params }) {
     });
 
     return (
-        <div>
+        <div className="custom-layout">
             <h1>{post.title}</h1>
             <p>{post.content}</p>
         </div>

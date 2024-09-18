@@ -1,15 +1,24 @@
-import AddPostForm from "../../components/forms/AddPostForm";
-import BlogList from "../../components/common/BlogList";
+"use server";
 
-export default function Blog() {
+import prisma from "@/lib/db";
+import AddPostForm from "@/components/forms/AddPostForm";
+import BlogList from "@/components/common/BlogList";
+import { createPost } from "@/actions/actions";
+import { getPosts } from "@/actions/actions";
+
+export default async function Blog() {
+  const posts = await prisma.post.findMany();
+
     return (
-        <div className="flex flex-col items-center h-screen gap-10 mt-10">
+        <div className="custom-layout">
 
 
         <h1>Blog</h1>
 
-        <AddPostForm />
-        <BlogList />
+        <AddPostForm createPost={createPost}/>
+
+        <h2>All posts</h2>
+        <BlogList posts={posts} />
 
 
       </div>

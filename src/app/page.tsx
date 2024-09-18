@@ -1,7 +1,7 @@
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="custom-layout">
       <main>
       <h1>Home</h1>
         <p>

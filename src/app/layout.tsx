@@ -31,9 +31,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex-container justify-center bg-gray-200">
         <Container>
-      <Header />
-      <Breadcrumbs />
-        {children}
+          <Header />
+          <Breadcrumbs />
+          {children}
         </Container>
       </body>
     </html>

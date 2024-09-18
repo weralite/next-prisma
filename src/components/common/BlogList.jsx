@@ -1,17 +1,18 @@
-export default function BlogList({ posts = [] }) {
-    if (posts.length === 0) {
-        return <div className="p-5 text-gray-500">No posts found</div>;
-      }
+import prisma from '../../lib/db';
+import Link from 'next/link';
 
+export default async function BlogList() {
 
+    const posts = await prisma.post.findMany();
     return (
-        <div className="flex flex-col items-center gap-5">
+        <ul className="flex flex-col items-center gap-5">
             {posts.map((post) => (
-                <div key={post.id} className="flex flex-col gap-2 p-5 border border-gray-300 rounded-lg">
-                    <h2>{post.title}</h2>
-                    <p>{post.content}</p>
-                </div>
+                <li key={post.id} className="flex flex-col gap-2 p-5">
+                    <Link href={`/blog/${post.id}`}>
+                        {post.title}
+                    </Link>
+                </li>
             ))}
-        </div>
+        </ul>
     );
 }

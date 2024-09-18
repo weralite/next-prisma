@@ -1,11 +1,7 @@
-// src/actions.ts
 "use server";
 
 import prisma from "@/lib/db";
 
-export async function getPosts() {
-  return await prisma.post.findMany();
-}
 
 export async function createPost(formData: FormData) {
   return await prisma.post.create({
@@ -16,24 +12,11 @@ export async function createPost(formData: FormData) {
   });
 }
 
-export async function getPostById(id: string) {
-  return await prisma.post.findUnique({
-    where: { id },
-  });
-}
 
-export async function updatePost(id: string, title: string, content: string) {
-  return await prisma.post.update({
-    where: { id },
-    data: {
-      title,
-      content,
+export async function getPosts() {
+  return await prisma.post.findMany({
+    orderBy: {
+      createdAt: "desc",
     },
-  });
-}
-
-export async function deletePost(id: string) {
-  return await prisma.post.delete({
-    where: { id },
   });
 }

@@ -7,9 +7,9 @@ export default async function BlogPost({ params }) {
             slug: params.slug,
         },
     });
-console.log(post)
+
     return (
-        <div>
+        <>
             <Breadcrumbs />
             <div className="flex flex-col items-center">
                 <div className="flex flex-col gap-4 text-center max-w-[500px]">
@@ -17,6 +17,6 @@ console.log(post)
                     <p>{post.content}</p>
                 </div>
             </div>
-        </div>
+        </>
     );
 }

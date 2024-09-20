@@ -1,5 +1,6 @@
 
 export default function Home() {
+  
   return (
     <div className="custom-layout">
       <h1>Home</h1>

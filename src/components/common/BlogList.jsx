@@ -1,8 +1,7 @@
 import Link from 'next/link';
 
 export default async function BlogList({ posts }) {
-
-
+    
     return (
         <ul className="flex flex-col items-center gap-5">
             {posts.map((post) => (

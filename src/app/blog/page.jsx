@@ -4,7 +4,6 @@ import prisma from "@/lib/db";
 import AddPostForm from "@/components/forms/AddPostForm";
 import BlogList from "@/components/common/BlogList";
 import { createPost } from "@/actions/actions";
-import { getPosts } from "@/actions/actions";
 
 export default async function Blog() {
   const posts = await prisma.post.findMany({
@@ -13,18 +12,17 @@ export default async function Blog() {
     },
   });
 
-    return (
-        <div className="custom-layout">
+  return (
+    <div className="custom-layout">
 
+      <h1>Blog</h1>
 
-        <h1>Blog</h1>
+      <AddPostForm createPost={createPost} />
 
-        <AddPostForm createPost={createPost}/>
+      <h2 className="border-b-2">All posts ({posts.length})</h2>
 
-        <h2 className="border-b-2">All posts ({posts.length})</h2>
-        <BlogList posts={posts} />
+      <BlogList posts={posts} />
 
-
-      </div>
-    );
-  }
+    </div>
+  );
+}

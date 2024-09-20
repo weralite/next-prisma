@@ -1,10 +1,11 @@
 export default function About() {
-    return (
-        <div className="custom-layout">
-        <h1>About</h1>
-        <p>
-          This is the about page.
-        </p>
-      </div>
-    );
-  }
+  
+  return (
+    <div className="custom-layout">
+      <h1>About</h1>
+      <p>
+        This is the about page.
+      </p>
+    </div>
+  );
+}

@@ -1,4 +1,5 @@
-import Navbar from "../navigation/Navbar";
+import PageNav from "../navigation/PageNav";
+import LoginNav from "../navigation/LoginNav";
 import Link from "next/link";
 
 export default function Header() {
@@ -9,7 +10,9 @@ export default function Header() {
       <h1 className="hidden sm:block">My App</h1>
       </Link>
 
-      <Navbar />
+
+      <PageNav />
+      <LoginNav />
 
     </header>
   );

@@ -15,11 +15,11 @@ export default async function Blog() {
   return (
     <div className="custom-layout">
 
-      <h1>Blog</h1>
+      <h2>Blog</h2>
 
       <AddPostForm createPost={createPost} />
 
-      <h2 className="border-b-2">All posts ({posts.length})</h2>
+      <h2 className="border-b-2 border-black">All posts ({posts.length})</h2>
 
       <BlogList posts={posts} />
 

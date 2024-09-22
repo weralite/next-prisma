@@ -8,18 +8,17 @@ export default function AddPostForm({ createPost }) {
         name="title"
         placeholder="Title"
         className="border border-gray-300 rounded-lg p-2"
-      >
-      </input>
+      />
+
       <textarea
-        type="text"
         name="content"
         rows={5}
         placeholder="Content"
         className="border border-gray-300 rounded-lg p-2"
-      >
-      </textarea>
+      />
+  
       <SubmitBtn text="Add Post" />
-
+ 
     </form>
   );
 }
